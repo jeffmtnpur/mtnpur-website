@@ -142,7 +142,7 @@
   .location-link:hover { color: white; border-color: rgba(255,255,255,0.2); }
   footer { background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.06); padding: 64px 0 32px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-  .footer-logo { height: 46px; margin-bottom: 20px; }
+  .footer-logo { height: 64px; margin-bottom: 20px; }
   .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.65; max-width: 280px; font-weight: 300; }
   .footer-col-title { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 20px; }
   .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -393,6 +393,28 @@
 <script>
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+
+  // Mobile nav toggle
+  var navToggle = document.querySelector('.nav-toggle');
+  var navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+      var isOpen = navLinks.classList.contains('mobile-open');
+      if (isOpen) {
+        navLinks.classList.remove('mobile-open');
+        navToggle.classList.remove('active');
+      } else {
+        navLinks.classList.add('mobile-open');
+        navToggle.classList.add('active');
+      }
+    });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('mobile-open');
+        navToggle.classList.remove('active');
+      });
+    });
+  }
 </script>
 </body>
 </html>
