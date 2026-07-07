@@ -25,7 +25,7 @@
       "@id": "https://www.mtnpur.com/#business",
       "name": "MTN PUR",
       "alternateName": "Pure Maintenance Nebraska",
-      "description": "Nebraska's most advanced mold testing, remediation, and indoor air quality company. Using Pure Maintenance dry vapor process, MTN PUR treats whole homes in a single day with little to no demolition.",
+      "description": "Omaha's advanced mold testing, remediation, and indoor air quality company. MTN Sanitization — using the proprietary Pure Maintenance dry vapor process — treats whole homes in a single day.",
       "url": "https://www.mtnpur.com",
       "telephone": "+14026626333",
       "email": "info@mtnpur.com",
@@ -146,7 +146,7 @@
           "name": "How long does mold remediation take with MTN PUR?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "MTN PUR's whole-home mold treatment is completed in a single day using our Pure Maintenance dry vapor process. Unlike traditional remediation that can take days or weeks, our process requires little to no demolition and minimal disruption to your home."
+            "text": "MTN PUR's whole-home treatment is completed in a single day. MTN Scrub preps bio-nesting surfaces, then MTN Sanitization — using the proprietary Pure Maintenance dry vapor process — treats every cubic foot of air and surface in your home."
           }
         },
         {
@@ -178,7 +178,7 @@
           "name": "What is MTN Sanitization?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "MTN Sanitization is an advanced dry vapor treatment that disperses a fine antimicrobial mist throughout your entire home, reaching spaces that traditional remediation cannot — including inside walls, air ducts, and sub-surfaces. The process requires little to no demolition and is completed in a single day."
+            "text": "MTN Sanitization is our whole-home treatment using the proprietary Pure Maintenance dry vapor process. It reaches every cubic foot of air and every square inch of surface in your home — including spaces traditional remediation cannot access. Completed in a single day with little to no disruption."
           }
         }
       ]
@@ -239,6 +239,16 @@
   .navbar.scrolled .nav-links a:hover { color: var(--blue); }
   .nav-cta { background: var(--blue); color: white !important; padding: 10px 24px; border-radius: 50px; font-size: 13px !important; font-weight: 600 !important; transition: background 0.2s !important; }
   .nav-cta:hover { background: var(--blue-light) !important; }
+  /* DROPDOWN NAV */
+  .nav-item { position: relative; }
+  .nav-item:hover .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-dropdown { position: absolute; top: calc(100% + 16px); left: 50%; transform: translateX(-50%) translateY(8px); background: white; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); min-width: 200px; padding: 8px; opacity: 0; visibility: hidden; transition: all 0.2s ease; z-index: 100; }
+  .nav-dropdown::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 12px; height: 12px; background: white; border-radius: 2px; transform: translateX(-50%) rotate(45deg); }
+  .nav-dropdown a { display: flex; align-items: center; gap: 10px; padding: 10px 14px; color: var(--navy) !important; font-size: 13px !important; font-weight: 500 !important; border-radius: 8px; text-decoration: none; transition: background 0.15s; white-space: nowrap; }
+  .nav-dropdown a:hover { background: #f0f4f7; color: var(--blue) !important; }
+  .nav-dropdown-divider { height: 1px; background: #e8edf2; margin: 4px 8px; }
+  .nav-arrow { display: inline-block; margin-left: 4px; font-size: 10px; transition: transform 0.2s; }
+  .nav-item:hover .nav-arrow { transform: rotate(180deg); }
   .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; padding-bottom: 80px; }
   .hero-bg { position: absolute; inset: 0; background: linear-gradient(165deg, #071f28 0%, #0c3849 35%, #0e4459 55%, #071f28 100%); }
   .hero-bg::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232475a6' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
@@ -363,6 +373,18 @@
   .footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: rgba(255,255,255,0.2); text-transform: uppercase; }
   .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
   .nav-toggle span { display: block; width: 22px; height: 1.5px; background: white; margin: 5px 0; }
+  
+  /* MOBILE NAV OPEN STATE */
+  .nav-links.mobile-open { display: flex; flex-direction: column; position: fixed; top: 39px; left: 0; right: 0; background: rgba(7,31,40,0.98); backdrop-filter: blur(12px); padding: 20px 24px 32px; z-index: 999; gap: 0; border-top: 1px solid rgba(255,255,255,0.08); }
+  .nav-links.mobile-open li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .nav-links.mobile-open li:last-child { border-bottom: none; margin-top: 16px; }
+  .nav-links.mobile-open a { color: rgba(255,255,255,0.85) !important; padding: 14px 0; display: block; font-size: 16px !important; }
+  .nav-links.mobile-open .nav-cta { background: var(--blue) !important; color: white !important; padding: 14px 24px !important; border-radius: 50px; text-align: center; display: block; }
+  .nav-links.mobile-open .nav-dropdown { display: none !important; }
+  .nav-toggle.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-toggle.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .nav-toggle span { transition: all 0.2s; }
   @media (max-width: 900px) {
     .nav-links { display: none; } .nav-toggle { display: block; }
     .stats-inner { grid-template-columns: repeat(2, 1fr); }
@@ -380,6 +402,12 @@
   }
   @media (max-width: 600px) {
     .container { padding: 0 20px; } .navbar-inner { padding: 0 20px; }
+    .navbar { top: 56px; }
+    .stats-inner { grid-template-columns: 1fr 1fr; gap: 0; }
+    .stat-item { padding: 28px 16px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .stat-number { font-size: 32px; }
+    .testimonial-quote { font-size: 16px !important; line-height: 1.75 !important; }
+    .testimonial-author { font-size: 13px !important; }
     .hero-content { padding: 0 20px; padding-top: 140px; }
     .footer-grid { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
@@ -408,11 +436,26 @@
       <svg class="navbar-logo white" viewBox="0 0 792 360" xmlns="http://www.w3.org/2000/svg"><g fill="#fff"><path d="M427.76,70.11l-32.71,41.96-32.71-41.96h-22.72v91.94h24s.22-50.82.01-53.06l27.08,32.57h8.67l27.07-32.5c-.2,2.22-.02,52.99-.02,52.99h24.04v-91.94h-22.72Z"/><path d="M519.19,162.05v-69.48h-37.04v-22.46h100.99v22.46h-37.95v69.48h-26Z"/><path d="M697.61,70.11l.04,56.86-55.41-56.86h-24.56v91.94h23.75s.03-56.09-.07-56.81l54.33,56.81h24.82v-91.94h-22.91Z"/><path d="M339.62,289.89v-100.07h61.08c6.97,0,13.23,1.44,18.79,4.31,5.55,2.87,9.98,6.8,13.28,11.8,3.29,4.99,4.94,10.73,4.94,17.23,0,6.97-1.76,13.19-5.3,18.65-3.53,5.46-8.31,9.75-14.34,12.85-6.03,3.11-12.76,4.66-20.2,4.66h-30.29v30.57h-27.97ZM367.16,235.16h24.78c3.11,0,5.86-.44,8.26-1.34,2.4-.9,4.36-2.24,5.87-4.03,1.51-1.79,2.26-3.86,2.26-6.22,0-2.16-.76-3.96-2.26-5.37s-3.47-2.47-5.87-3.18c-2.4-.71-5.15-1.06-8.26-1.06h-24.78v21.18Z"/><path d="M527.75,289.89c-10.64,0-19.97-2.41-27.97-6.56-8.01-4.14-14.22-9.84-18.65-17.09-4.42-7.25-6.64-15.54-6.64-24.87v-51.56h28.25v51c0,4.89,1.08,9.18,3.25,12.85,2.16,3.67,5.13,6.52,8.9,8.55,3.77,2.02,8.05,3.03,12.85,3.03,5.09,0,9.56-1.01,13.42-3.03,3.86-2.03,6.9-4.88,9.11-8.55,2.21-3.68,3.32-7.96,3.32-12.85v-51h27.4v51.56c0,9.32-2.21,17.61-6.64,24.87-4.42,7.25-10.59,12.94-18.5,17.09-7.91,4.14-17.28,6.56-28.11,6.56Z"/><path d="M693.17,252.56c.9-.37,1.83-.71,2.7-1.15,5.8-2.92,10.36-6.92,13.71-12,3.34-5.09,5.01-10.93,5.01-17.52s-1.48-12.43-4.45-17.24c-2.96-4.8-7.39-8.48-13.27-11.02-5.89-2.54-13.21-3.81-21.97-3.81h-57.21v100.07h26.27v-34.1h19.7l24.79,34.1h32.06l-27.34-37.33ZM684.64,230.31c-1.32,1.62-3.01,2.83-5.08,3.64-2.07.82-4.33,1.22-6.78,1.22h-28.81v-21.19h28.39c2.63,0,5.01.38,7.13,1.15,2.11.76,3.84,1.92,5.15,3.45,1.32,1.53,1.98,3.49,1.98,5.87s-.66,4.25-1.98,5.87Z"/><path d="M259.13,157.77l-25.28,5.17s-52.47-60.22-52.64-60.06c.15.15-61.65,60.06-61.65,60.06l-17.49-2.29-30.58,21.2v108.04h219.44v-125.79l-13.88,12.37-17.92-18.7ZM270.08,269.05H92.32v-57.59s.16-15.07.16-15.07l16.61-13.21,23.17,2.34,48.95-51.03v38.74l-29.71,50.42s69.55-27.15,69.55-27.26l49.04,72.67Z"/><polygon points="290.92 70.11 290.92 139.05 277.05 151 270.08 143.84 270.08 90.95 92.32 90.95 92.32 144.25 71.48 158.67 71.48 70.11 290.92 70.11"/></g></svg>
       <svg class="navbar-logo color" viewBox="0 0 792 360" xmlns="http://www.w3.org/2000/svg"><g><path fill="#0c3849" d="M427.76,70.11l-32.71,41.96-32.71-41.96h-22.72v91.94h24s.22-50.82.01-53.06l27.08,32.57h8.67l27.07-32.5c-.2,2.22-.02,52.99-.02,52.99h24.04v-91.94h-22.72Z"/><path fill="#0c3849" d="M519.19,162.05v-69.48h-37.04v-22.46h100.99v22.46h-37.95v69.48h-26Z"/><path fill="#0c3849" d="M697.61,70.11l.04,56.86-55.41-56.86h-24.56v91.94h23.75s.03-56.09-.07-56.81l54.33,56.81h24.82v-91.94h-22.91Z"/><path fill="#0c3849" d="M339.62,289.89v-100.07h61.08c6.97,0,13.23,1.44,18.79,4.31,5.55,2.87,9.98,6.8,13.28,11.8,3.29,4.99,4.94,10.73,4.94,17.23,0,6.97-1.76,13.19-5.3,18.65-3.53,5.46-8.31,9.75-14.34,12.85-6.03,3.11-12.76,4.66-20.2,4.66h-30.29v30.57h-27.97ZM367.16,235.16h24.78c3.11,0,5.86-.44,8.26-1.34,2.4-.9,4.36-2.24,5.87-4.03,1.51-1.79,2.26-3.86,2.26-6.22,0-2.16-.76-3.96-2.26-5.37s-3.47-2.47-5.87-3.18c-2.4-.71-5.15-1.06-8.26-1.06h-24.78v21.18Z"/><path fill="#0c3849" d="M527.75,289.89c-10.64,0-19.97-2.41-27.97-6.56-8.01-4.14-14.22-9.84-18.65-17.09-4.42-7.25-6.64-15.54-6.64-24.87v-51.56h28.25v51c0,4.89,1.08,9.18,3.25,12.85,2.16,3.67,5.13,6.52,8.9,8.55,3.77,2.02,8.05,3.03,12.85,3.03,5.09,0,9.56-1.01,13.42-3.03,3.86-2.03,6.9-4.88,9.11-8.55,2.21-3.68,3.32-7.96,3.32-12.85v-51h27.4v51.56c0,9.32-2.21,17.61-6.64,24.87-4.42,7.25-10.59,12.94-18.5,17.09-7.91,4.14-17.28,6.56-28.11,6.56Z"/><path fill="#0c3849" d="M693.17,252.56c.9-.37,1.83-.71,2.7-1.15,5.8-2.92,10.36-6.92,13.71-12,3.34-5.09,5.01-10.93,5.01-17.52s-1.48-12.43-4.45-17.24c-2.96-4.8-7.39-8.48-13.27-11.02-5.89-2.54-13.21-3.81-21.97-3.81h-57.21v100.07h26.27v-34.1h19.7l24.79,34.1h32.06l-27.34-37.33ZM684.64,230.31c-1.32,1.62-3.01,2.83-5.08,3.64-2.07.82-4.33,1.22-6.78,1.22h-28.81v-21.19h28.39c2.63,0,5.01.38,7.13,1.15,2.11.76,3.84,1.92,5.15,3.45,1.32,1.53,1.98,3.49,1.98,5.87s-.66,4.25-1.98,5.87Z"/><path fill="#0c3849" d="M259.13,157.77l-25.28,5.17s-52.47-60.22-52.64-60.06c.15.15-61.65,60.06-61.65,60.06l-17.49-2.29-30.58,21.2v108.04h219.44v-125.79l-13.88,12.37-17.92-18.7ZM270.08,269.05H92.32v-57.59s.16-15.07.16-15.07l16.61-13.21,23.17,2.34,48.95-51.03v38.74l-29.71,50.42s69.55-27.15,69.55-27.26l49.04,72.67Z"/><polygon fill="#2475a6" points="290.92 70.11 290.92 139.05 277.05 151 270.08 143.84 270.08 90.95 92.32 90.95 92.32 144.25 71.48 158.67 71.48 70.11 290.92 70.11"/></g></svg>
     </a>
-    <ul class="nav-links">
-      <li><a href="services.html">Services</a></li>
+        <ul class="nav-links">
+      <li class="nav-item">
+        <a href="services.html">Services <span class="nav-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="services.html#inspection">🔍 Mold Inspection</a>
+          <a href="services.html#mtn-sanitization">🏠 Mold Remediation</a>
+          <a href="prevention.html">🛡 Mold Prevention</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="omaha.html">Service Areas <span class="nav-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="omaha.html">📍 Omaha</a>
+          <a href="bellevue.html">📍 Bellevue</a>
+          <a href="papillion.html">📍 Papillion</a>
+          <a href="lincoln.html">📍 Lincoln</a>
+        </div>
+      </li>
       <li><a href="about.html">About</a></li>
-      <li><a href="prevention.html">Prevention</a></li>
-      <li><a href="omaha.html">Omaha</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="tel:4026626333">(402) 662-6333</a></li>
       <li><a href="contact.html" class="nav-cta">Schedule Inspection</a></li>
     </ul>
@@ -514,7 +557,7 @@
         <h2 class="why-headline">A different standard<br>for mold treatment</h2>
         <p class="why-body">Most mold companies treat what they can see. MTN PUR treats the whole home — identifying and addressing the source so mold doesn't come back. Our process is faster, cleaner, and more thorough than traditional remediation.</p>
         <div class="why-features">
-          <div class="why-feature"><div class="why-feature-dot"></div><div class="why-feature-text"><strong>MTN Sanitization</strong> — uses the proprietary Pure Maintenance dry vapor process to reach every crack, surface, and air space with little to no demolition</div></div>
+          <div class="why-feature"><div class="why-feature-dot"></div><div class="why-feature-text"><strong>MTN Sanitization</strong> — uses the proprietary Pure Maintenance dry vapor process to reach every crack, surface, and air space throughout your home</div></div>
           <div class="why-feature"><div class="why-feature-dot"></div><div class="why-feature-text"><strong>Whole-home approach</strong> — we identify and treat moisture sources, not just visible mold</div></div>
           <div class="why-feature"><div class="why-feature-dot"></div><div class="why-feature-text"><strong>Done in a single day</strong> — minimal disruption to your home and family</div></div>
           <div class="why-feature"><div class="why-feature-dot"></div><div class="why-feature-text"><strong>NORMI certified specialists</strong> — trained to the highest industry standard</div></div>
@@ -578,7 +621,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-question"><span class="faq-question-text">How much does mold remediation cost in Omaha?</span><span class="faq-icon">+</span></button>
-        <div class="faq-answer"><p>Mold remediation costs vary widely depending on the size of the home, the extent of the mold problem, and the method used. Traditional remediation — which involves physical removal of affected materials — can range from a few hundred dollars for a small isolated area to tens of thousands for a large-scale project. Whole-home treatment approaches like ours typically fall in a different range.</p><p>At MTN PUR, a mold inspection is typically around $500, with a portion of that fee potentially credited toward treatment if needed. Whole-home treatment averages around $4,500. We believe in transparent pricing — our dedicated pricing page covers what affects cost, what's included, and how to think about the investment.</p><p>The most important thing: get an inspection first. Cost should follow what you actually need — not the other way around.</p></div>
+        <div class="faq-answer"><p>Mold remediation costs vary widely depending on the size of the home, the extent of the mold problem, and the method used. Traditional remediation — which involves physical removal of affected materials — can range from a few hundred dollars for a small isolated area to tens of thousands for a large-scale project. Whole-home treatment approaches like ours typically fall in a different range.</p><p>At MTN PUR, a mold inspection is typically around $500, and a portion of the inspection fee may be applied toward the cost of treatment. Whole-home treatment averages around $4,500. We believe in transparent pricing — our dedicated pricing page covers what affects cost, what's included, and how to think about the investment.</p><p>The most important thing: get an inspection first. Cost should follow what you actually need — not the other way around.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question"><span class="faq-question-text">Do I need to leave my home during mold treatment?</span><span class="faq-icon">+</span></button>
